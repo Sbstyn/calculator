@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 33px;
+    color: white;
+}
+body{
+    background-color: teal;
+}
+main button{
+    width: 90px;
+    height: 90px;
+    margin: 5px 5px;
+    background-color: green;
+}
+.container{
+    background-color: gray;
+    margin: 20px 20px;
+}
+#display{
+    font-size: 55px;
+    text-align: right;
+    padding-right: 15px;
+    background-color: black;
+}
