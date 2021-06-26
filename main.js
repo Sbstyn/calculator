@@ -1,5 +1,6 @@
 let _1st_button = document.getElementById("1");
 let _1st_button_width = _1st_button.getBoundingClientRect().width;
+let calc_display = document.querySelector("#display");
 
 let total_width = _1st_button_width * 4 + 40;
 
@@ -9,31 +10,42 @@ document.querySelector(".container").style.width = `${total_width + 30}px`;
 let display_text = 0;
 let display_number = 0;
 
-console.log(document.querySelectorAll("button")[0]);
+let save_num1 = 0;
+
+//console.log(document.querySelectorAll("button")[0]);
 
 /*for(let i = 0; i < document.querySelectorAll("button").length; i++){
     document.querySelectorAll("button")[i].onclick = window[`_${document.querySelectorAll("button")[i].id}`]();
 }*/
 
+function update_display(){
+    save_num1 = display_number;
+    calc_display.innerHTML = display_text;
+}
 
 function _1(){
     display_text = 0;
     display_number = 0;
+    update_display();
 }
 
 function _2(){
     display_text = 0;
     display_number = 0;
+    update_display();
 }
 
 function _3(){
     display_number = display_text;
     display_text = display_number / 100;
+    update_display();
+    display_text = 0;
 }
 
 function _4(){
     display_number = display_text;
     display_text = "/";
+    update_display();
 }
 
 function _5(){
@@ -41,6 +53,7 @@ function _5(){
     d_t_string = d_t_string + "7";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _6(){
@@ -48,6 +61,7 @@ function _6(){
     d_t_string = d_t_string + "8";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _7(){
@@ -55,11 +69,14 @@ function _7(){
     d_t_string = d_t_string + "9";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _8(){
     display_number = display_text;
     display_text = "x";
+    update_display();
+    display_text = 0;
 }
 
 function _9(){
@@ -67,6 +84,7 @@ function _9(){
     d_t_string = d_t_string + "4";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _10(){
@@ -74,6 +92,7 @@ function _10(){
     d_t_string = d_t_string + "5";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _11(){
@@ -81,11 +100,14 @@ function _11(){
     d_t_string = d_t_string + "6";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _12(){
     display_number = display_text;
     display_text = "-";
+    update_display();
+    display_text = 0;
 }
 
 function _13(){
@@ -93,6 +115,7 @@ function _13(){
     d_t_string = d_t_string + "1";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _14(){
@@ -100,6 +123,7 @@ function _14(){
     d_t_string = d_t_string + "2";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _15(){
@@ -107,15 +131,19 @@ function _15(){
     d_t_string = d_t_string + "3";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _16(){
     display_number = display_text;
     display_text = "+";
+    update_display();
+    display_text = 0;
 }
 
 function _17(){
     console.log(display_text);
+    update_display();
 }
 
 function _18(){
@@ -123,6 +151,7 @@ function _18(){
     d_t_string = d_t_string + "0";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _19(){
@@ -130,8 +159,10 @@ function _19(){
     d_t_string = d_t_string + ".";
     display_text = parseFloat(d_t_string);
     console.log(display_text);
+    update_display();
 }
 
 function _20(){
     console.log("a");
+    update_display();
 }
