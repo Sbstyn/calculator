@@ -12,26 +12,40 @@ let display_number = 0;
 
 let save_num1 = 0;
 
+let divide = false;
+let multiply = false;
+let subtract = false;
+let add = false;
+
 //console.log(document.querySelectorAll("button")[0]);
 
 /*for(let i = 0; i < document.querySelectorAll("button").length; i++){
     document.querySelectorAll("button")[i].onclick = window[`_${document.querySelectorAll("button")[i].id}`]();
 }*/
 
-function update_display(){
-    save_num1 = display_number;
-    calc_display.innerHTML = display_text;
+function update_display(result){
+    if(result == null){
+        console.log(save_num1);
+        save_num1 = display_number;
+        calc_display.innerHTML = display_text;
+    }
+    else{
+        save_num1 = 0;
+        calc_display = result;
+    }
 }
 
 function _1(){
     display_text = 0;
     display_number = 0;
+    save_num1 = 0;
     update_display();
 }
 
 function _2(){
     display_text = 0;
     display_number = 0;
+    save_num1 = 0;
     update_display();
 }
 
@@ -46,6 +60,7 @@ function _4(){
     display_number = display_text;
     display_text = "/";
     update_display();
+    divide = true;
 }
 
 function _5(){
@@ -164,5 +179,12 @@ function _19(){
 
 function _20(){
     console.log("a");
-    update_display();
+    if(save_num1 != 0){
+        if(divide == true){
+            let d_t_string = display_text.toString();
+            let result = save_num1 / d_t_string;
+            console.log(result);
+            update_display(result);
+        }
+    }
 }
